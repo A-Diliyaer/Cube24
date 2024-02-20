@@ -1,4 +1,4 @@
 package cubecart.pages;
 
-public class ReviewsPage {
+public class ReviewsPage extends BasePage{
 }

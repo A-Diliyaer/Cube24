@@ -1,4 +1,4 @@
 package cubecart.test;
 
-public class ProductsTest {
+public class ProductsTest extends BaseTest{
 }
