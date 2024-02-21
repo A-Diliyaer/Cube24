@@ -1,1 +1,3 @@
-# QA Automation Project
+# Maven TestNG Framework
+
+run tests with command: mvn clean test
