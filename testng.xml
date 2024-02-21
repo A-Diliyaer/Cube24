@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite1" verbose="1">
+    <test name="SmokeTest">
+        <classes>
+            <class name="cubecart.test.CustomersTest"></class>
+            <class name="cubecart.test.ProductsTest"></class>
+            <class name="cubecart.test.ReviewsTest"></class>
+        </classes>
+    </test>
+</suite>
