@@ -1,4 +1,10 @@
 package cubecart.pages;
 
-public class CustomerPage extends BasePage {
+import org.testng.annotations.Test;
+
+public class CustomerPage  {
+
+
+
+
 }
