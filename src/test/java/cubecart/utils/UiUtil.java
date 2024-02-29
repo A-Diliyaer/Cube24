@@ -8,8 +8,8 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class UiUtil  {
-    public static WebElement getElement(String url ){
-        return Driver.getDriver().findElement(By.xpath(url));
+    public static WebElement getElement(String locator ){
+        return Driver.getDriver().findElement(By.xpath(locator));
     }
 
     public static void ClickElement (String locator ){
@@ -28,20 +28,22 @@ public class UiUtil  {
         return getElement(locator).isDisplayed();
     }
     public static void SelectFromDropDown(String locator){
-         WebElement DropDown=Driver.getDriver().findElement(By.xpath(locator));
+         WebElement DropDown=getElement(locator);
         Select select=new Select(DropDown);
         List <WebElement> options=select.getOptions();
 
     }
-    public static int iFrame(){
-        Driver.getDriver().switchTo().frame(iFrame());
+    public static void switchToFrame(String locator){
+        WebElement frame=getElement(locator);
+        Driver.getDriver().switchTo().frame(frame);
+        //and to switch back:
         Driver.getDriver().switchTo().defaultContent();
-        return 0;
+
     }
 
     public static void dragAndDrop(String locator1,String locator2){
-        WebElement dragElement=Driver.getDriver().findElement(By.xpath(locator1));
-        WebElement dropElement=Driver.getDriver().findElement(By.xpath(locator2));
+        WebElement dragElement=getElement(locator1);
+        WebElement dropElement=getElement(locator2);
         Actions actions=new Actions(Driver.getDriver());
         actions.dragAndDrop(dragElement,dropElement).build().perform();
     }
