@@ -27,23 +27,23 @@ public class UiUtil  {
     public static boolean isDisplayed(String locator){
         return getElement(locator).isDisplayed();
     }
-    public static String SelectFromDropDown(String locator){
+    public static void SelectFromDropDown(String locator){
          WebElement DropDown=Driver.getDriver().findElement(By.xpath(locator));
         Select select=new Select(DropDown);
         List <WebElement> options=select.getOptions();
-        return locator;
+
     }
-    public static int Frame(){
-        Driver.getDriver().switchTo().frame(Frame());
+    public static int iFrame(){
+        Driver.getDriver().switchTo().frame(iFrame());
         Driver.getDriver().switchTo().defaultContent();
         return 0;
     }
 
-    public static void dragAndDrop(String locator){
-        WebElement dragElemet=Driver.getDriver().findElement(By.xpath(locator));
-        WebElement dropElemet=Driver.getDriver().findElement(By.xpath(locator));
+    public static void dragAndDrop(String locator1,String locator2){
+        WebElement dragElement=Driver.getDriver().findElement(By.xpath(locator1));
+        WebElement dropElement=Driver.getDriver().findElement(By.xpath(locator2));
         Actions actions=new Actions(Driver.getDriver());
-        actions.dragAndDrop(dragElemet,dropElemet).build().perform();
+        actions.dragAndDrop(dragElement,dropElement).build().perform();
     }
 
 }
