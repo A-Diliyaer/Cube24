@@ -6,25 +6,19 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
-    public static String readFromConfig(String fileName,String key){
-        Properties properties=new Properties();
-        //open the file in reading mode
-        FileInputStream inputStream= null;
+
+    private static Properties properties = new Properties();
+    static {
         try {
-            inputStream = new FileInputStream(fileName);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            properties.load(inputStream);
+            FileInputStream file = new FileInputStream("src/test/resources/config.properties");
+            properties.load(file);
+            file.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Properties file not found");
         }
-        String value= properties.getProperty(key);
-        return value;
     }
 
-    public static String getProperty(String key){
-        return getProperty(key);
+    public static String getProperty(String keyWord){
+        return properties.getProperty(keyWord);
     }
 }
