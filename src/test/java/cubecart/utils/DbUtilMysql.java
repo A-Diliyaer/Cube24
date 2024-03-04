@@ -1,6 +1,9 @@
 package cubecart.utils;
 
 
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 import java.sql.*;
@@ -86,6 +89,7 @@ public class DbUtilMysql {
         return isProductExist;
     }
 
+    @AfterClass
     public static void closeDBConnection(){
         try {
             if (connection.isClosed()){
