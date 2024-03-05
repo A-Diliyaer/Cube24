@@ -34,8 +34,8 @@ public class BaseTest {
         log.info("browser closed");
     }
 
-
-
-
-
+    @AfterClass
+    public void closeDBConnection(){
+        DbUtilMysql.closeDBConnection();
+    }
 }
