@@ -15,6 +15,7 @@ private Driver(){
 }
 
     public static WebDriver getDriver() {
+
         if (driver == null) {
             String browser = ConfigReader.getProperty("browser").toLowerCase();
             switch (browser) {

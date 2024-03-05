@@ -1,15 +1,17 @@
 package cubecart.test;
 
-import cubecart.utils.ConfigReader;
-import cubecart.utils.Driver;
-import cubecart.utils.SessionUtil;
-import cubecart.utils.UiUtil;
+import cubecart.utils.*;
 import org.apache.log4j.Logger;
 import org.testng.annotations.*;
 
 public class BaseTest {
     SessionUtil sessionUtil = SessionUtil.getInstance();
     static Logger log = Logger.getLogger(BaseTest.class);
+
+    @BeforeClass
+    public void connectToDB() {
+        DbUtilMysql.connectToDB();
+    }
 
     @BeforeMethod
     public void setUp() {
@@ -32,8 +34,8 @@ public class BaseTest {
         log.info("browser closed");
     }
 
-
-
-
-
+    @AfterClass
+    public void closeDBConnection(){
+        DbUtilMysql.closeDBConnection();
+    }
 }
