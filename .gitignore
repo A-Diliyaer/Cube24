@@ -3,4 +3,4 @@
 *.iml
 target
 test-output
-resources/
+**/config.properties
