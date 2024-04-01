@@ -25,7 +25,6 @@ public class XpathUtil {
     public static final String subscribeDropDown= "//*[@id='subscription_status']";
     public static final String newPassword= "//*[@id='cust-password']";
     public static final String confirmPassword= "//*[@id='cust-passconf']";
-    public static final String saveButton= "//*[@name='save']";
     public static final String productsLink= "//*[@id='nav_products']";
     public static final String addProductLink="//*[text()='Add Product']";
     public static final String productNameField="//*[@id='name']";
