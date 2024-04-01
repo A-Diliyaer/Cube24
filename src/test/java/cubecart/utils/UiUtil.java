@@ -7,7 +7,8 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class UiUtil  {
+public class
+UiUtil  {
     public static WebElement getElement(String locator ){
         return Driver.getDriver().findElement(By.xpath(locator));
     }
@@ -17,7 +18,9 @@ public class UiUtil  {
     }
 
     public static void sendKeys(String locator,String text ){
+
         getElement(locator).sendKeys(text);
+
     }
 
     public static String getText(String locator ){
