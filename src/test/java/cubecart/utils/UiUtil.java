@@ -30,10 +30,11 @@ UiUtil  {
     public static boolean isDisplayed(String locator){
         return getElement(locator).isDisplayed();
     }
-    public static void SelectFromDropDown(String locator){
-         WebElement DropDown=getElement(locator);
-        Select select=new Select(DropDown);
-        List <WebElement> options=select.getOptions();
+
+    public static void SelectFromDropDown(String locator) {
+        WebElement DropDown = getElement(locator);
+        Select select = new Select(DropDown);
+        List<WebElement> options = select.getOptions();
 
     }
     public static void switchToFrame(String locator){
