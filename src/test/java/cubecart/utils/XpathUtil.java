@@ -8,6 +8,7 @@ public class XpathUtil {
     public static final String usernameField = "//*[@id='username']";
     public static final String passwordField = "//*[@id='password']";
     public static final String loginButton = "//*[@id='login']";
+    //for customer page
     public static final String customerListLink= "//*[text()='Customer List']";
     public static final String addCustomerButton= "//*[text()='Add Customer']";
     public static final String searchCustomerButton= "//a[text()='Search Customers']";
@@ -26,6 +27,7 @@ public class XpathUtil {
     public static final String newPassword= "//*[@id='cust-password']";
     public static final String confirmPassword= "//*[@id='cust-passconf']";
     public static final String saveButton= "//*[@name='save']";
+    public static final String customerSuccessfullyAdded= "//*[@class='success']";
 
 
 

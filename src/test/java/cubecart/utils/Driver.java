@@ -11,7 +11,7 @@ import java.util.Locale;
 
 public class Driver {
     private static WebDriver driver;
-private Driver(){
+public Driver(){
 }
 
     public static WebDriver getDriver() {

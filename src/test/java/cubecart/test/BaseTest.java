@@ -8,34 +8,34 @@ public class BaseTest {
     SessionUtil sessionUtil = SessionUtil.getInstance();
     static Logger log = Logger.getLogger(BaseTest.class);
 
-    @BeforeClass
-    public void connectToDB() {
-        DbUtilMysql.connectToDB();
-    }
+//    @BeforeClass
+//    public void connectToDB() {
+//        DbUtilMysql.connectToDB();
+//    }
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         log.info("Starting Test Automation");
         log.info("Browser type ::"+ ConfigReader.getProperty("browser"));
         String URL=ConfigReader.getProperty("url");
-        log.info("Environment ::"+URL);
+       log.info("Environment ::"+URL);
         Driver.getDriver().get(URL);
         log.info("Starting browser");
-        UiUtil.getElement("//*[@id='username']").sendKeys(ConfigReader.getProperty("username"));
-        UiUtil.getElement("//*[@id='password']").sendKeys(ConfigReader.getProperty("password"));
-        UiUtil.ClickElement("//*[@id='login']");
+        UiUtil.getElement(XpathUtil.usernameField).sendKeys(ConfigReader.getProperty("username"));
+        UiUtil.getElement(XpathUtil.passwordField).sendKeys(ConfigReader.getProperty("password"));
+        UiUtil.ClickElement(XpathUtil.loginButton);
         log.info("logging into app");
     }
 
 
-    @AfterMethod
+  @AfterClass
     public void tearDown(){
         Driver.closeDriver();
         log.info("browser closed");
     }
 
-    @AfterClass
-    public void closeDBConnection(){
-        DbUtilMysql.closeDBConnection();
-    }
+//    @AfterClass
+//    public void closeDBConnection(){
+//        DbUtilMysql.closeDBConnection();
+//    }
 }
