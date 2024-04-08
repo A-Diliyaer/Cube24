@@ -11,13 +11,13 @@ import java.util.Locale;
 
 public class Driver {
     private static WebDriver driver;
-private Driver(){
+public Driver(){
 }
 
     public static WebDriver getDriver() {
 
         if (driver == null) {
-            String browser = ConfigReader.getProperty("browser").toLowerCase();
+            String browser = ConfigReader.getProperty("browser");
             switch (browser) {
                 case "chrome":
                     driver=new ChromeDriver();

@@ -13,7 +13,7 @@ public class DbUtilMysql {
    public static Connection connection;
 
     public static void connectToDB(){
-        String databaseUrl = ConfigReader.getProperty("databaseUrl");
+       String databaseUrl = ConfigReader.getProperty("databaseUrl");
         String databasePort = ConfigReader.getProperty("databasePort");
         String databaseUsername = ConfigReader.getProperty("databaseUsername");
         String databasePassword = ConfigReader.getProperty("databasePassword");
@@ -53,9 +53,9 @@ public class DbUtilMysql {
             s.printStackTrace();
         }
         String sqlScript = String.format
-                ("select product_id, name, price from cc_CubeCart_inventory where name='%s'", productName);
+               ("select product_id, name, price from cc_CubeCart_inventory where name='%s'", productName);
         try {
-            resultSet = statement.executeQuery(sqlScript);
+          resultSet = statement.executeQuery(sqlScript);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -84,7 +84,7 @@ public class DbUtilMysql {
             }
             if (rowCount >= 1 && name.equalsIgnoreCase(productName)) {
                 isProductExist = true;
-            }
+           }
         }
         return isProductExist;
     }
@@ -96,10 +96,10 @@ public class DbUtilMysql {
                 System.out.println("Database connection is closed!");
             }
             else {
-                connection.close();
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+               connection.close();
+           }
+ } catch (SQLException e) {
+   throw new RuntimeException(e);
+ }
+}
 }
